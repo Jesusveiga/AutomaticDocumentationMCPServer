@@ -27,6 +27,12 @@ venv/
 ENV/
 env/
 
+__pycache__/
+*.pdf
+*.docx
+!templates/*.docx
+.DS_Store
+
 # IDE
 .vscode/
 .idea/
