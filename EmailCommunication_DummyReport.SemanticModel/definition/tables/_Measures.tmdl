@@ -1,0 +1,199 @@
+table _Measures
+	lineageTag: 146f207e-398c-48d4-91f4-3c557fd07c32
+
+	measure TotalEmailsSent = COUNTROWS(fact_emails)
+		formatString: 0
+		lineageTag: eb85e4ae-9af9-44af-b71e-88a6d30858f3
+
+	measure OpenedEmails = CALCULATE(COUNTROWS(fact_emails), fact_emails[Is opened?] = "opened")
+		formatString: 0
+		lineageTag: b2736c3d-ca0d-462a-bc61-493f8aa07185
+
+	measure UnopenedEmails = CALCULATE(COUNTROWS(fact_emails), fact_emails[Is opened?] = "unopened")
+		formatString: 0
+		lineageTag: 12b2f8a2-940f-4214-b3e1-277e7641f7af
+
+	measure OpenRate = DIVIDE([OpenedEmails], [TotalEmailsSent], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3b3696a1-4770-44d9-82af-20f6215854b6
+
+	measure UnopenedRate = DIVIDE([UnopenedEmails], [TotalEmailsSent], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f83a4a6e-a2ba-4641-9851-555373174965
+
+	measure TotalUniqueSenders = DISTINCTCOUNT(fact_emails[From Name])
+		formatString: 0
+		lineageTag: 2913fd38-8307-4672-b921-bfa3404785a2
+
+	measure TotalUniqueReceivers = ```
+			
+			CALCULATE(
+			    COUNT(fact_emails[Email id]),
+			    ALLEXCEPT(fact_emails, fact_emails[To Name])
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 2822ca6b-ce07-4ab6-8543-fe986bd57048
+
+	measure TotalEmailsReceivedBySeniority = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]),
+			        USERELATIONSHIP(fact_emails[To seniority], dim_seniority[Seniority])
+			    )
+			```
+		formatString: 0
+		lineageTag: f5e19460-c34e-467b-9ced-731dc4acb3a1
+
+	measure TotalEmailsReceivedByToName = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]),
+			        USERELATIONSHIP(fact_emails[To Name], dim_contacts[Name])
+			    )
+			```
+		formatString: 0
+		lineageTag: a4d8803d-f426-4722-ac93-3051fa41a126
+
+	measure TotalEmailsReceivedByToDepartment = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]),
+			        USERELATIONSHIP(fact_emails[To Department], dim_department[Department])
+			    )
+			```
+		formatString: 0
+		lineageTag: c4afa4ad-de60-43ef-bb67-7ef01ca4538a
+
+	measure TotalEmailsOpenedByToName = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]), fact_emails[Is opened?] = "opened",
+			        USERELATIONSHIP(fact_emails[To Name], dim_contacts[Name])
+			    )
+			```
+		formatString: 0
+		lineageTag: 793a23aa-31a3-4420-9818-7b8dad401dcb
+
+	measure TotalEmailsOpenedByToDepartment = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]), fact_emails[Is opened?] = "opened",
+			        USERELATIONSHIP(fact_emails[To Department], dim_department[Department])
+			    )
+			```
+		formatString: 0
+		lineageTag: a9d2272f-0dd3-4220-9776-899cf4a0ebbe
+
+	measure InfluenceScore = [TotalEmailsSent] + [TotalEmailsReceivedByToName]
+		formatString: 0
+		lineageTag: 7e8790ce-0424-464f-b8c2-e3b5c0183999
+
+	measure TotalPositiveSentimentEmails = ```
+			
+			CALCULATE(
+			    COUNT(fact_emails[Email id]),
+			    fact_emails[Sentiment] = "Positive"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: af522489-acbb-41fe-b349-1304d51e82bc
+
+	measure TotalNeutralSentimentEmails =
+			
+			CALCULATE(
+			    COUNT(fact_emails[Email id]),
+			    fact_emails[Sentiment] = "Neutral"
+			)
+		formatString: 0
+		lineageTag: 1f21285f-b0d4-4cc7-8342-6561a5b8c4da
+
+	measure TotalNegativeSentimentEmails =
+			
+			CALCULATE(
+			    COUNT(fact_emails[Email id]),
+			    fact_emails[Sentiment] = "Negative"
+			)
+		formatString: 0
+		lineageTag: f51b9c25-fe4f-4304-8fd8-2b4aaf881d06
+
+	measure PercentagePositiveSentiment = ```
+			
+			DIVIDE(
+			    [TotalPositiveSentimentEmails],
+			    [TotalEmailsSent],
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 085d5984-9dcb-4301-8608-4067f39c259f
+
+	measure PercentageNeutralSentiment = ```
+			
+			DIVIDE(
+			    [TotalNeutralSentimentEmails],
+			    [TotalEmailsSent],
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d6dd656e-6e66-4ff8-b5b8-bbb21ba6392c
+
+	measure PercentageNegativeSentiment =
+			
+			DIVIDE(
+			    [TotalNegativeSentimentEmails],
+			    [TotalEmailsSent],
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eb9a7b81-c066-4d80-9a0c-de3ac5baf1b3
+
+	measure DeptInfluenceScore = [TotalEmailsSent] + [TotalEmailsReceivedByToDepartment]
+		formatString: 0
+		lineageTag: dab1b352-bd19-43dc-b7d5-aa56f39691eb
+
+	measure SentRate = DIVIDE([TotalEmailsSentByFromDepartment], [TotalEmailsSent], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 79dfe687-f5e5-433c-9a51-ed9e2503ec8a
+
+	measure TotalEmailsSentByFromDepartment = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id])
+			    )
+			```
+		formatString: 0
+		lineageTag: 1570c14b-21cf-4512-98a8-c3f25056fdb5
+
+	measure 'Avg Emails per Day' = DIVIDE([TotalEmailsSent], DISTINCTCOUNT(fact_emails[Date]))
+		lineageTag: 9659a157-5463-4722-84cd-08f51ac34b17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalEmailsSentFromSeniority = ```
+			
+			    CALCULATE(
+			        COUNT(fact_emails[Email id]),
+			        USERELATIONSHIP(fact_emails[From seniority], dim_seniority[Seniority])
+			    )
+			```
+		formatString: 0
+		lineageTag: 4f4f8170-2f14-48bd-8ef3-289264d64a77
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measures = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measures", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Measures"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

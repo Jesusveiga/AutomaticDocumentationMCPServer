@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "EmailCommunication_DummyReport"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9180b1c6-7197-4ca0-88b0-553c6277a6cb"
+  }
+}

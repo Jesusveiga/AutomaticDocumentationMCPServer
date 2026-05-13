@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "f8ff3d03c8ea328d7112",
+  "position": {
+    "x": 10,
+    "y": 470.64935064935065,
+    "z": 20000,
+    "height": 249.35064935064935,
+    "width": 468.83116883116884,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "flexacharts_1_0_0_45",
+    "query": {
+      "queryState": {
+        "categorys": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TotalEmailsSent"
+                }
+              },
+              "queryRef": "_Measures.TotalEmailsSent",
+              "nativeQueryRef": "TotalEmailsSent"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emails"
+                    }
+                  },
+                  "Property": "Email topic"
+                }
+              },
+              "queryRef": "fact_emails.Email topic",
+              "nativeQueryRef": "Email topic"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "TotalEmailsSent"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "settingCanvasChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"4l016updc\":{\"backgroundContainer\":\"#ffffff\",\"styleColor\":\"solid\",\"borderWidth\":1,\"isMatchColorBorder\":true,\"isAutoFontColor\":true,\"fontFamily\":\"Arial\",\"fontSize\":12,\"fontColor\":\"#000000\",\"typeColor\":\"multicolor\",\"minColor\":\"#a14c4c\",\"maxColor\":\"#ff0000\",\"chartColors\":[],\"chartColorsByType\":{\"multicolor\":[{\"id\":\"123\",\"color\":\"#afeb00\",\"style\":\"solid\"},{\"id\":\"117\",\"color\":\"#6eb0ae\",\"style\":\"solid\"},{\"id\":\"109\",\"color\":\"#95c23f\",\"style\":\"solid\"},{\"id\":\"108\",\"color\":\"#dfe14d\",\"style\":\"solid\"},{\"id\":\"91\",\"color\":\"#4e5c07\",\"style\":\"solid\"},{\"id\":\"88\",\"color\":\"#d78111\",\"style\":\"solid\"},{\"id\":\"63\",\"color\":\"#213ca3\",\"style\":\"solid\"},{\"id\":\"60\",\"color\":\"#61431c\",\"style\":\"solid\"},{\"id\":\"55\",\"color\":\"#cf1640\",\"style\":\"solid\"},{\"id\":\"44\",\"color\":\"#578281\",\"style\":\"solid\"},{\"id\":\"40\",\"color\":\"#5bd0a5\",\"style\":\"solid\"},{\"id\":\"27\",\"color\":\"#dedb46\",\"style\":\"solid\"},{\"id\":\"18\",\"color\":\"#e5e5df\",\"style\":\"solid\"},{\"id\":\"Legal Matters\",\"color\":\"#190f6e\",\"style\":\"solid\"},{\"id\":\"Sales and Marketing\",\"color\":\"#a0d1ff\",\"style\":\"solid\"},{\"id\":\"Meeting Scheduling\",\"color\":\"#afeb00\",\"style\":\"solid\"},{\"id\":\"Operational Issues\",\"color\":\"#190f6e\",\"style\":\"solid\"},{\"id\":\"Project Updates\",\"color\":\"#78a117\",\"style\":\"solid\"},{\"id\":\"Technical Support\",\"color\":\"#a0d1ff\",\"style\":\"solid\"},{\"id\":\"Product Development\",\"color\":\"#4008c5\",\"style\":\"solid\"},{\"id\":\"Internal Policies and Procedures\",\"color\":\"#2a2f37\",\"style\":\"solid\"},{\"id\":\"Client Related Communication\",\"color\":\"#0f34b2\",\"style\":\"solid\"},{\"id\":\"HR related topics\",\"color\":\"#4757dc\",\"style\":\"solid\"},{\"id\":\"Finance and Accounting\",\"color\":\"#1aaec4\",\"style\":\"solid\"},{\"id\":\"Training and Development\",\"color\":\"#92e48d\",\"style\":\"solid\"},{\"id\":\"Vendor Relations\",\"color\":\"#4286e2\",\"style\":\"solid\"},{\"id\":\"Security Alerts\",\"color\":\"#87eb51\",\"style\":\"solid\"}]},\"borderColors\":[{\"id\":\"Legal Matters\",\"color\":\"#0d2b0e\",\"style\":\"solid\"},{\"id\":\"Sales and Marketing\",\"color\":\"#c60cb3\",\"style\":\"solid\"},{\"id\":\"Meeting Scheduling\",\"color\":\"#396c6d\",\"style\":\"solid\"},{\"id\":\"Operational Issues\",\"color\":\"#901a98\",\"style\":\"solid\"},{\"id\":\"Project Updates\",\"color\":\"#78a117\",\"style\":\"solid\"},{\"id\":\"Technical Support\",\"color\":\"#c1625d\",\"style\":\"solid\"},{\"id\":\"Product Development\",\"color\":\"#4008c5\",\"style\":\"solid\"},{\"id\":\"Internal Policies and Procedures\",\"color\":\"#2a2f37\",\"style\":\"solid\"},{\"id\":\"Client Related Communication\",\"color\":\"#0f34b2\",\"style\":\"solid\"},{\"id\":\"HR related topics\",\"color\":\"#4757dc\",\"style\":\"solid\"},{\"id\":\"Finance and Accounting\",\"color\":\"#1aaec4\",\"style\":\"solid\"},{\"id\":\"Training and Development\",\"color\":\"#92e48d\",\"style\":\"solid\"},{\"id\":\"Vendor Relations\",\"color\":\"#4286e2\",\"style\":\"solid\"},{\"id\":\"Security Alerts\",\"color\":\"#87eb51\",\"style\":\"solid\"}],\"emptyWaffleColor\":[{\"id\":\"Legal Matters\",\"color\":\"#cccccc\"},{\"id\":\"Sales and Marketing\",\"color\":\"#cccccc\"},{\"id\":\"Meeting Scheduling\",\"color\":\"#cccccc\"},{\"id\":\"Operational Issues\",\"color\":\"#cccccc\"},{\"id\":\"Project Updates\",\"color\":\"#cccccc\"},{\"id\":\"Technical Support\",\"color\":\"#cccccc\"},{\"id\":\"Product Development\",\"color\":\"#cccccc\"},{\"id\":\"Internal Policies and Procedures\",\"color\":\"#cccccc\"},{\"id\":\"Client Related Communication\",\"color\":\"#cccccc\"},{\"id\":\"HR related topics\",\"color\":\"#cccccc\"},{\"id\":\"Finance and Accounting\",\"color\":\"#cccccc\"},{\"id\":\"Training and Development\",\"color\":\"#cccccc\"},{\"id\":\"Vendor Relations\",\"color\":\"#cccccc\"},{\"id\":\"Security Alerts\",\"color\":\"#cccccc\"}],\"isDefaultEmptyColor\":false,\"totalDotWaffleChart\":100,\"chartType\":\"lollipop\",\"sortByField\":\"TotalEmailsSent\",\"sortOrder\":\"asc\",\"displayTypeByTotal\":\"value\",\"positionTotal\":\"outside\",\"palette\":\"spectral\"}}'"
+                }
+              }
+            },
+            "viewMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "setHasOpenedChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "setChartFields": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"4l016updc\",\"chartName\":\"\",\"chartType\":\"column\",\"roles\":{\"axis\":[\"Email topic\"],\"value\":[\"TotalEmailsSent\"],\"legend\":[],\"extra\":[]}}]'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "53f206bad2431710baac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_emails"
+              }
+            },
+            "Property": "Email topic"
+          }
+        },
+        "type": "TopN",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "subquery",
+              "Expression": {
+                "Subquery": {
+                  "Query": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "f",
+                        "Entity": "fact_emails",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Select": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "f"
+                            }
+                          },
+                          "Property": "Email topic"
+                        },
+                        "Name": "field"
+                      }
+                    ],
+                    "OrderBy": [
+                      {
+                        "Direction": 2,
+                        "Expression": {
+                          "Measure": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "_"
+                              }
+                            },
+                            "Property": "TotalEmailsSent"
+                          }
+                        }
+                      }
+                    ],
+                    "Top": 3
+                  }
+                }
+              },
+              "Type": 2
+            },
+            {
+              "Name": "f",
+              "Entity": "fact_emails",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Email topic"
+                      }
+                    }
+                  ],
+                  "Table": {
+                    "SourceRef": {
+                      "Source": "subquery"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

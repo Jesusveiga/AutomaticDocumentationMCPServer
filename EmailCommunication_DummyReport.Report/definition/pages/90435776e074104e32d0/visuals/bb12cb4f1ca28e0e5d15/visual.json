@@ -1,0 +1,176 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "bb12cb4f1ca28e0e5d15",
+  "position": {
+    "x": 983.90804597701151,
+    "y": 272.41379310344826,
+    "z": 19000,
+    "height": 190.80459770114942,
+    "width": 289.65517241379308,
+    "tabOrder": 23000
+  },
+  "visual": {
+    "visualType": "flexacharts_1_0_0_45",
+    "query": {
+      "queryState": {
+        "categorys": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TotalEmailsSent"
+                }
+              },
+              "queryRef": "_Measures.TotalEmailsSent",
+              "nativeQueryRef": "TotalEmailsSent"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sentiment"
+                    }
+                  },
+                  "Property": "Sentiment"
+                }
+              },
+              "queryRef": "Sentiment.Sentiment",
+              "nativeQueryRef": "Sentiment"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "settingCanvasChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"rcl5kmcop\":{\"backgroundContainer\":\"#ffffff\",\"styleColor\":\"solid\",\"borderWidth\":1,\"isMatchColorBorder\":true,\"isAutoFontColor\":true,\"fontFamily\":\"Arial\",\"fontSize\":\"0\",\"fontColor\":\"#4a4a4a\",\"typeColor\":\"multicolor\",\"minColor\":\"#a14c4c\",\"maxColor\":\"#ff0000\",\"chartColors\":[],\"chartColorsByType\":{\"multicolor\":[{\"id\":\"Positive\",\"color\":\"#afeb00\",\"style\":\"solid\"},{\"id\":\"Neutral\",\"color\":\"#a0d1ff\",\"style\":\"solid\"},{\"id\":\"Negative\",\"color\":\"#190f6e\",\"style\":\"solid\"}],\"singlecolor\":[{\"id\":\"TotalEmailsSent\",\"color\":\"#cc3fa8\",\"style\":\"solid\"}],\"gradient\":[{\"id\":\"Positive\",\"color\":\"#ca2b2b\",\"style\":\"solid\"},{\"id\":\"Neutral\",\"color\":\"#ff0000\",\"style\":\"solid\"},{\"id\":\"Negative\",\"color\":\"#a14c4c\",\"style\":\"solid\"}]},\"borderColors\":[{\"id\":\"Positive\",\"color\":\"#ca2b2b\",\"style\":\"solid\"},{\"id\":\"Neutral\",\"color\":\"#ff0000\",\"style\":\"solid\"},{\"id\":\"Negative\",\"color\":\"#a14c4c\",\"style\":\"solid\"}],\"emptyWaffleColor\":[{\"id\":\"Positive\",\"color\":\"#cccccc\"},{\"id\":\"Neutral\",\"color\":\"#cccccc\"},{\"id\":\"Negative\",\"color\":\"#cccccc\"}],\"isDefaultEmptyColor\":false,\"totalDotWaffleChart\":100,\"chartType\":\"lollipop\",\"sortByField\":\"Sentiment\",\"sortOrder\":\"asc\",\"displayTypeByTotal\":\"value\",\"positionTotal\":\"outside\",\"palette\":\"spectral\"}}'"
+                }
+              }
+            },
+            "viewMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "setHasOpenedChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "setChartFields": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"rcl5kmcop\",\"chartName\":\"\",\"chartType\":\"pie\",\"roles\":{\"axis\":[\"Sentiment\"],\"value\":[\"TotalEmailsSent\"],\"legend\":[],\"extra\":[]}}]'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "37daef87450268ed0905",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_seniority"
+              }
+            },
+            "Property": "Seniority"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dim_seniority",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Seniority"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Professional'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "requireSingleSelect": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

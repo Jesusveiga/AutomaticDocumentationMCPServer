@@ -1,0 +1,32 @@
+model Model
+	culture: en-CA
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim_contacts","fact_emails","_Measures","dim_seniority","dim_department","Dynamic Titles","Sentiment"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_contacts
+ref table DateTableTemplate_1f35302b-2263-4042-953a-65232bf21c34
+ref table fact_emails
+ref table LocalDateTable_63513472-0511-4adb-a34c-08d15153ca5c
+ref table _Measures
+ref table 'Source Nodes'
+ref table 'Target Nodes'
+ref table dim_seniority
+ref table dim_department
+ref table 'Dynamic Titles'
+ref table Sentiment
+ref table LocalDateTable_4cda58ae-cf2f-4637-b717-9f3cd6b206fa
+ref table LocalDateTable_b24bdeaf-cb39-46e8-994c-b1a00e7fec3f
+ref table TopicGroup
+ref table FlexaDesign
+
+ref cultureInfo en-CA
+

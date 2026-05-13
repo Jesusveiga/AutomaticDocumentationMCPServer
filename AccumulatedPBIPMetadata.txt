@@ -1,0 +1,584 @@
+[
+  {
+    "report_name": "EmailCommunication_DummyReport",
+    "folder_path": "c:\\Users\\jesus.veiga\\Desktop\\MCP Project",
+    "tables": [
+      {
+        "name": "DateTableTemplate_1f35302b-2263-4042-953a-65232bf21c34",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime"
+          },
+          {
+            "name": "Year = YEAR([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "MonthNo = MONTH([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "Month = FORMAT([Date], \"MMMM\")",
+            "dataType": "string"
+          },
+          {
+            "name": "QuarterNo = INT(([MonthNo] + 2) / 3)",
+            "dataType": "int64"
+          },
+          {
+            "name": "Quarter = \"Qtr \" & [QuarterNo]",
+            "dataType": "string"
+          },
+          {
+            "name": "Day = DAY([Date])",
+            "dataType": "int64"
+          }
+        ]
+      },
+      {
+        "name": "dim_contacts",
+        "columns": [
+          {
+            "name": "Name",
+            "dataType": "string"
+          },
+          {
+            "name": "Department",
+            "dataType": "string"
+          },
+          {
+            "name": "email",
+            "dataType": "string"
+          },
+          {
+            "name": "Seniority",
+            "dataType": "string"
+          },
+          {
+            "name": "Department color",
+            "dataType": "string"
+          },
+          {
+            "name": "Department aura",
+            "dataType": "string"
+          }
+        ]
+      },
+      {
+        "name": "dim_department",
+        "columns": [
+          {
+            "name": "Department",
+            "dataType": "string"
+          }
+        ]
+      },
+      {
+        "name": "dim_seniority",
+        "columns": [
+          {
+            "name": "Seniority",
+            "dataType": "string"
+          }
+        ]
+      },
+      {
+        "name": "Dynamic Titles",
+        "columns": []
+      },
+      {
+        "name": "fact_emails",
+        "columns": [
+          {
+            "name": "Email id",
+            "dataType": "int64"
+          },
+          {
+            "name": "From Name",
+            "dataType": "string"
+          },
+          {
+            "name": "From seniority",
+            "dataType": "string"
+          },
+          {
+            "name": "From Department",
+            "dataType": "string"
+          },
+          {
+            "name": "To Name",
+            "dataType": "string"
+          },
+          {
+            "name": "To seniority",
+            "dataType": "string"
+          },
+          {
+            "name": "To Department",
+            "dataType": "string"
+          },
+          {
+            "name": "Email topic",
+            "dataType": "string"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime"
+          },
+          {
+            "name": "Sentiment",
+            "dataType": "string"
+          },
+          {
+            "name": "Is opened?",
+            "dataType": "string"
+          },
+          {
+            "name": "Device",
+            "dataType": "string"
+          },
+          {
+            "name": "Within work hours",
+            "dataType": "string"
+          },
+          {
+            "name": "Within workdays",
+            "dataType": "string"
+          },
+          {
+            "name": "Day Name",
+            "dataType": "string"
+          },
+          {
+            "name": "Day of Week",
+            "dataType": "int64"
+          },
+          {
+            "name": "WorkHours?",
+            "dataType": "string"
+          },
+          {
+            "name": "Workday?",
+            "dataType": "string"
+          },
+          {
+            "name": "RandomTime = ```",
+            "dataType": ""
+          },
+          {
+            "name": "DateTime = ```",
+            "dataType": ""
+          },
+          {
+            "name": "HourOfDay = HOUR(fact_emails[DateTime])",
+            "dataType": ""
+          },
+          {
+            "name": "Email topic - Short",
+            "dataType": "string"
+          }
+        ]
+      },
+      {
+        "name": "FlexaDesign",
+        "columns": [
+          {
+            "name": "ConfigName",
+            "dataType": ""
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_4cda58ae-cf2f-4637-b717-9f3cd6b206fa",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime"
+          },
+          {
+            "name": "Year = YEAR([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "MonthNo = MONTH([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "Month = FORMAT([Date], \"MMMM\")",
+            "dataType": "string"
+          },
+          {
+            "name": "QuarterNo = INT(([MonthNo] + 2) / 3)",
+            "dataType": "int64"
+          },
+          {
+            "name": "Quarter = \"Qtr \" & [QuarterNo]",
+            "dataType": "string"
+          },
+          {
+            "name": "Day = DAY([Date])",
+            "dataType": "int64"
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_63513472-0511-4adb-a34c-08d15153ca5c",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime"
+          },
+          {
+            "name": "Year = YEAR([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "MonthNo = MONTH([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "Month = FORMAT([Date], \"MMMM\")",
+            "dataType": "string"
+          },
+          {
+            "name": "QuarterNo = INT(([MonthNo] + 2) / 3)",
+            "dataType": "int64"
+          },
+          {
+            "name": "Quarter = \"Qtr \" & [QuarterNo]",
+            "dataType": "string"
+          },
+          {
+            "name": "Day = DAY([Date])",
+            "dataType": "int64"
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_b24bdeaf-cb39-46e8-994c-b1a00e7fec3f",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime"
+          },
+          {
+            "name": "Year = YEAR([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "MonthNo = MONTH([Date])",
+            "dataType": "int64"
+          },
+          {
+            "name": "Month = FORMAT([Date], \"MMMM\")",
+            "dataType": "string"
+          },
+          {
+            "name": "QuarterNo = INT(([MonthNo] + 2) / 3)",
+            "dataType": "int64"
+          },
+          {
+            "name": "Quarter = \"Qtr \" & [QuarterNo]",
+            "dataType": "string"
+          },
+          {
+            "name": "Day = DAY([Date])",
+            "dataType": "int64"
+          }
+        ]
+      },
+      {
+        "name": "Sentiment",
+        "columns": [
+          {
+            "name": "Sentiment",
+            "dataType": "string"
+          },
+          {
+            "name": "Sort_Order",
+            "dataType": "int64"
+          }
+        ]
+      },
+      {
+        "name": "Source Nodes",
+        "columns": [
+          {
+            "name": "Source Nodes",
+            "dataType": ""
+          },
+          {
+            "name": "Source Nodes Fields",
+            "dataType": ""
+          },
+          {
+            "name": "Source Nodes Order",
+            "dataType": ""
+          }
+        ]
+      },
+      {
+        "name": "Target Nodes",
+        "columns": [
+          {
+            "name": "Target Nodes",
+            "dataType": ""
+          },
+          {
+            "name": "Target Nodes Fields",
+            "dataType": ""
+          },
+          {
+            "name": "Target Nodes Order",
+            "dataType": ""
+          }
+        ]
+      },
+      {
+        "name": "TopicGroup",
+        "columns": [
+          {
+            "name": "Group",
+            "dataType": ""
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": []
+      }
+    ],
+    "measures": [
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Department",
+        "expression": "SELECTEDVALUE(dim_department[Department], \"Departments\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Employee",
+        "expression": "SELECTEDVALUE(fact_emails[From Name], \"Employees\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 3",
+        "expression": "\"Drill Down: \" & [Selected Department] & \" > \" & [Selected Seniority]",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 2",
+        "expression": "\"Drill Down: \" & [Selected Topic] & \" > \" & [Selected Employee]",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 1",
+        "expression": "\"Drill Down: \" & [Selected Workday] & \" > \" & [Selected Workhours]",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Workday",
+        "expression": "SELECTEDVALUE(fact_emails[Workday?], \"All Workdays\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Workhours",
+        "expression": "SELECTEDVALUE(fact_emails[WorkHours?], \"All Workhours\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Topic",
+        "expression": "SELECTEDVALUE(fact_emails[Email topic], \"Topics\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Seniority",
+        "expression": "SELECTEDVALUE(dim_seniority[Seniority], \"Seniority\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Selected Device",
+        "expression": "SELECTEDVALUE(fact_emails[Device], \"Devices\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 4",
+        "expression": "\"Drill Down: \" & [Selected Device] & \" > \" & [Selected Workday] & \" > \" & [Selected Workhours]",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 5",
+        "expression": "\"Drill Down: \" & [Selected Department] & \" > \" & [Selected Employee]",
+        "displayFolder": ""
+      },
+      {
+        "table": "Dynamic Titles",
+        "name": "Chart 6",
+        "expression": "\"Drill Down: \" & [Selected Topic] & \" > \" & [Selected Seniority]",
+        "displayFolder": ""
+      },
+      {
+        "table": "TopicGroup",
+        "name": "Emails by Topic Group",
+        "expression": "VAR CurrentGroup = SELECTEDVALUE(TopicGroup[Group])\n\t\t\t\n\t\t\t// Tạo bảng topic + count trong context hiện tại (respect slicers)\n\t\t\tVAR TopicCounts =\n\t\t\t    ADDCOLUMNS(\n\t\t\t        SUMMARIZE(\n\t\t\t            ALLSELECTED(fact_emails),\n\t\t\t            fact_emails[Email topic - Short]\n\t\t\t        ),\n\t\t\t        \"Cnt\", CALCULATE(COUNTROWS(fact_emails))\n\t\t\t    )\n\t\t\t\n\t\t\t// Thêm cột Rank (dense rank theo Cnt)\n\t\t\tVAR TopicWithRank =\n\t\t\t    ADDCOLUMNS(\n\t\t\t        TopicCounts,\n\t\t\t        \"Rank\", RANKX(TopicCounts, [Cnt], , DESC, DENSE)\n\t\t\t    )\n\t\t\t\n\t\t\tVAR Top1 = SUMX( FILTER(TopicWithRank, [Rank] = 1), [Cnt] )\n\t\t\tVAR Top2 = SUMX( FILTER(TopicWithRank, [Rank] = 2), [Cnt] )\n\t\t\tVAR Top3 = SUMX( FILTER(TopicWithRank, [Rank] = 3), [Cnt] )\n\t\t\tVAR Others = SUMX( FILTER(TopicWithRank, [Rank] > 3), [Cnt] )\n\t\t\t\n\t\t\tRETURN\n\t\t\tSWITCH(\n\t\t\t    TRUE(),\n\t\t\t    CurrentGroup = \"Top 1\", Top1,\n\t\t\t    CurrentGroup = \"Top 2\", Top2,\n\t\t\t    CurrentGroup = \"Top 3\", Top3,\n\t\t\t    CurrentGroup = \"Others\", Others,\n\t\t\t    BLANK()\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsSent",
+        "expression": "COUNTROWS(fact_emails)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "OpenedEmails",
+        "expression": "CALCULATE(COUNTROWS(fact_emails), fact_emails[Is opened?] = \"opened\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "UnopenedEmails",
+        "expression": "CALCULATE(COUNTROWS(fact_emails), fact_emails[Is opened?] = \"unopened\")",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "OpenRate",
+        "expression": "DIVIDE([OpenedEmails], [TotalEmailsSent], 0)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "UnopenedRate",
+        "expression": "DIVIDE([UnopenedEmails], [TotalEmailsSent], 0)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalUniqueSenders",
+        "expression": "DISTINCTCOUNT(fact_emails[From Name])",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalUniqueReceivers",
+        "expression": "CALCULATE(\n\t\t\t    COUNT(fact_emails[Email id]),\n\t\t\t    ALLEXCEPT(fact_emails, fact_emails[To Name])\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsReceivedBySeniority",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]),\n\t\t\t        USERELATIONSHIP(fact_emails[To seniority], dim_seniority[Seniority])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsReceivedByToName",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]),\n\t\t\t        USERELATIONSHIP(fact_emails[To Name], dim_contacts[Name])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsReceivedByToDepartment",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]),\n\t\t\t        USERELATIONSHIP(fact_emails[To Department], dim_department[Department])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsOpenedByToName",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]), fact_emails[Is opened?] = \"opened\",\n\t\t\t        USERELATIONSHIP(fact_emails[To Name], dim_contacts[Name])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsOpenedByToDepartment",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]), fact_emails[Is opened?] = \"opened\",\n\t\t\t        USERELATIONSHIP(fact_emails[To Department], dim_department[Department])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "InfluenceScore",
+        "expression": "[TotalEmailsSent] + [TotalEmailsReceivedByToName]",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalPositiveSentimentEmails",
+        "expression": "CALCULATE(\n\t\t\t    COUNT(fact_emails[Email id]),\n\t\t\t    fact_emails[Sentiment] = \"Positive\"\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalNeutralSentimentEmails",
+        "expression": "CALCULATE(\n\t\t\t    COUNT(fact_emails[Email id]),\n\t\t\t    fact_emails[Sentiment] = \"Neutral\"\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalNegativeSentimentEmails",
+        "expression": "CALCULATE(\n\t\t\t    COUNT(fact_emails[Email id]),\n\t\t\t    fact_emails[Sentiment] = \"Negative\"\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "PercentagePositiveSentiment",
+        "expression": "DIVIDE(\n\t\t\t    [TotalPositiveSentimentEmails],\n\t\t\t    [TotalEmailsSent],\n\t\t\t    0\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "PercentageNeutralSentiment",
+        "expression": "DIVIDE(\n\t\t\t    [TotalNeutralSentimentEmails],\n\t\t\t    [TotalEmailsSent],\n\t\t\t    0\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "PercentageNegativeSentiment",
+        "expression": "DIVIDE(\n\t\t\t    [TotalNegativeSentimentEmails],\n\t\t\t    [TotalEmailsSent],\n\t\t\t    0\n\t\t\t)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "DeptInfluenceScore",
+        "expression": "[TotalEmailsSent] + [TotalEmailsReceivedByToDepartment]",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "SentRate",
+        "expression": "DIVIDE([TotalEmailsSentByFromDepartment], [TotalEmailsSent], 0)",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsSentByFromDepartment",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id])\n\t\t\t    )",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "Avg Emails per Day",
+        "expression": "DIVIDE([TotalEmailsSent], DISTINCTCOUNT(fact_emails[Date]))",
+        "displayFolder": ""
+      },
+      {
+        "table": "_Measures",
+        "name": "TotalEmailsSentFromSeniority",
+        "expression": "CALCULATE(\n\t\t\t        COUNT(fact_emails[Email id]),\n\t\t\t        USERELATIONSHIP(fact_emails[From seniority], dim_seniority[Seniority])\n\t\t\t    )",
+        "displayFolder": ""
+      }
+    ],
+    "relationships": []
+  }
+]

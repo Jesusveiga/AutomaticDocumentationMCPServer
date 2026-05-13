@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.45",
+  "author": {
+    "name": "Devspear",
+    "email": "info@devspear.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/flexacharts_1_0_0_45.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "name": "flexa_chart",
+    "displayName": "Flexa Charts 1.0.0.45",
+    "guid": "flexacharts_1_0_0_45",
+    "visualClassName": "Visual",
+    "version": "1.0.0.45",
+    "description": "Flexa_Chart",
+    "supportUrl": "https://flexaintel.com/",
+    "gitHubUrl": ""
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

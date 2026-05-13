@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ada6bfa653790b0052b7",
+  "position": {
+    "x": 433.8134011375829,
+    "y": 301.78191039777568,
+    "z": 8000,
+    "height": 186.62237834183338,
+    "width": 457.525830773527,
+    "tabOrder": 22000
+  },
+  "visual": {
+    "visualType": "flexacharts_1_0_0_45",
+    "query": {
+      "queryState": {
+        "categorys": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_seniority"
+                    }
+                  },
+                  "Property": "Seniority"
+                }
+              },
+              "queryRef": "dim_seniority.Seniority",
+              "nativeQueryRef": "Seniority"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "OpenedEmails"
+                }
+              },
+              "queryRef": "_Measures.OpenedEmails",
+              "nativeQueryRef": "OpenedEmails"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TotalEmailsSent"
+                }
+              },
+              "queryRef": "_Measures.TotalEmailsSent",
+              "nativeQueryRef": "TotalEmailsSent"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_seniority"
+                  }
+                },
+                "Property": "Seniority"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "settingCanvasChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"857auyg3g\":{\"backgroundContainer\":\"#ffffff\",\"styleColor\":\"solid\",\"borderWidth\":1,\"isMatchColorBorder\":true,\"isAutoFontColor\":true,\"fontFamily\":\"Arial\",\"fontSize\":\"0\",\"fontColor\":\"#000000\",\"typeColor\":\"singlecolor\",\"minColor\":\"#a14c4c\",\"maxColor\":\"#ff0000\",\"chartColors\":[],\"chartColorsByType\":{\"multicolor\":[{\"id\":\"C-level\",\"color\":\"#42fbe4\",\"style\":\"solid\"},{\"id\":\"Middle level management\",\"color\":\"#173742\",\"style\":\"solid\"},{\"id\":\"Professional\",\"color\":\"#db5b42\",\"style\":\"solid\"}],\"singlecolor\":[{\"id\":\"OpenedEmails\",\"color\":\"#afeb00\",\"style\":\"solid\"},{\"id\":\"TotalEmailsSent\",\"color\":\"#afeb00\",\"style\":\"hatched\"}]},\"borderColors\":[],\"emptyWaffleColor\":[],\"isDefaultEmptyColor\":false,\"totalDotWaffleChart\":100,\"chartType\":\"lollipop\",\"sortByField\":\"Seniority\",\"sortOrder\":\"asc\",\"displayTypeByTotal\":\"value\",\"positionTotal\":\"outside\"}}'"
+                }
+              }
+            },
+            "viewMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "setHasOpenedChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "setChartFields": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"857auyg3g\",\"chartName\":\"\",\"chartType\":\"column\",\"roles\":{\"axis\":[\"Seniority\"],\"value\":[\"OpenedEmails\",\"TotalEmailsSent\"],\"legend\":[],\"extra\":[]}}]'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": "2.0.5.90",
+  "author": {
+    "name": "Devspear",
+    "email": "info@devspear.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/flexatables_2_0_5_90.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "flexatables_2_0_5_90",
+    "name": "flexa_tables",
+    "displayName": "Flexa Tables 2.0.5.90",
+    "version": "2.0.5.90",
+    "description": "Flexa Tables",
+    "supportUrl": "https://flexaintel.com/",
+    "gitHubUrl": "https://github.com/devspear-com/powerbi_table_v2",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

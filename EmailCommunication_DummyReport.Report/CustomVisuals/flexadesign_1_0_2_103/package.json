@@ -1,0 +1,29 @@
+{
+  "version": "1.0.2.103",
+  "author": {
+    "name": "Devspear",
+    "email": "info@devspear.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/flexadesign_1_0_2_103.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "flexadesign_1_0_2_103",
+    "name": "flexa_design",
+    "displayName": "Flexa Design 1.0.2.103",
+    "version": "1.0.2.103",
+    "description": "Flexa_Design",
+    "supportUrl": "https://flexaintel.com/",
+    "gitHubUrl": "https://github.com/devspear-com/powerbi_flexa_design",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

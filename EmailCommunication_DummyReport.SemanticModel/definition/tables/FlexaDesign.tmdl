@@ -1,0 +1,17 @@
+table FlexaDesign
+	lineageTag: 885d53e4-a13d-405f-a809-37bc6e41839e
+
+	column ConfigName
+		lineageTag: a6a4ad88-8627-4518-a037-07d9baf388c8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ConfigName]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FlexaDesign = calculated
+		mode: import
+		source = DATATABLE("ConfigName", STRING, { {"Config"} })
+
+	annotation PBI_Id = d244f466f4fe4b44b48c1aa60cc4f1d1
+

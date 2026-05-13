@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "9536500acc3aaec15bcc",
+  "position": {
+    "x": 423.8134011375829,
+    "y": 291.78191039777568,
+    "z": 7000,
+    "height": 186.62237834183338,
+    "width": 457.525830773527,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "flexacharts_1_0_0_45",
+    "query": {
+      "queryState": {
+        "categorys": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_seniority"
+                    }
+                  },
+                  "Property": "Seniority"
+                }
+              },
+              "queryRef": "dim_seniority.Seniority",
+              "nativeQueryRef": "Seniority"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "OpenedEmails"
+                }
+              },
+              "queryRef": "_Measures.OpenedEmails",
+              "nativeQueryRef": "OpenedEmails"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TotalEmailsSent"
+                }
+              },
+              "queryRef": "_Measures.TotalEmailsSent",
+              "nativeQueryRef": "TotalEmailsSent"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_seniority"
+                  }
+                },
+                "Property": "Seniority"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "settingCanvasChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "viewMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "setHasOpenedChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "setChartFields": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"857auyg3g\",\"chartName\":\"\",\"chartType\":\"column\",\"roles\":{\"axis\":[\"Seniority\"],\"value\":[\"OpenedEmails\",\"TotalEmailsSent\"],\"legend\":[],\"extra\":[]}}]'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

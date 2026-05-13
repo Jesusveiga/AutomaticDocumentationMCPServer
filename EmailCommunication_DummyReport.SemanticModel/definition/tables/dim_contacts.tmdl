@@ -1,0 +1,68 @@
+table dim_contacts
+	lineageTag: 6788749c-8a44-4f32-b28e-7f62f56bf7e2
+
+	column Name
+		dataType: string
+		lineageTag: c0dda2c1-e7b7-4e39-8c00-afaa3cd8e52b
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 83c355ad-a263-4b29-a1eb-9ed0d1abc22c
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: 29f339f0-5280-4661-8ef9-05e43ded5c5d
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seniority
+		dataType: string
+		lineageTag: be03afa7-1b28-4560-b688-036a35f943c8
+		summarizeBy: none
+		sourceColumn: Seniority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department color'
+		dataType: string
+		lineageTag: 7cf6ee12-a956-42f6-bfe3-41e57e660b87
+		summarizeBy: none
+		sourceColumn: Department color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department aura'
+		dataType: string
+		lineageTag: f01a3c0e-2d98-478f-86df-ae4ceaba81a5
+		summarizeBy: none
+		sourceColumn: Department aura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_contacts = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\toyin\OneDrive\Documents\Data Analysis Projects\Onyx Data DNA Challenge\2024\July 2024\Onyx Data -DataDNA Dataset Challenge - Email Analysis Dataset - July 2024\Onyx Data - Email Analysis Dataset - July 2024.xlsx"), null, true),
+				    #"contacts - dimension table_Sheet" = Source{[Item="contacts - dimension table",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"contacts - dimension table_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Name", type text}, {"Department", type text}, {"email", type text}, {"Base 64 Image", type text}, {"Seniority", type text}, {"Department color", type text}, {"Department aura", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"Base 64 Image"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

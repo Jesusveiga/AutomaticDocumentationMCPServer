@@ -1,0 +1,48 @@
+table 'Target Nodes'
+	lineageTag: 16fc0bca-0194-4ed2-aef0-0608047ecd6a
+
+	column 'Target Nodes'
+		lineageTag: 97f85e3e-ef7a-4272-be57-08ca123ab20c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Target Nodes Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Target Nodes Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Nodes Fields'
+		isHidden
+		lineageTag: c36152cf-d1de-4a38-a80c-1dfd616bea2f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Target Nodes Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Nodes Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7940f0f6-f7db-4c50-aa22-4ff3f20e8f11
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Target Nodes' = calculated
+		mode: import
+		source =
+				{
+				    ("To Name", NAMEOF('fact_emails'[To Name]), 0),
+				    ("To Department", NAMEOF('fact_emails'[To Department]), 1)
+				}
+
+	annotation PBI_Id = fc62a27f06c740f1aea0a603a533e3c9
+

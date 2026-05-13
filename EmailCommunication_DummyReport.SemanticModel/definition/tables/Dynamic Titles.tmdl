@@ -1,0 +1,54 @@
+table 'Dynamic Titles'
+	lineageTag: bbd2c83e-ada3-462c-8c95-a262091c3a3e
+
+	measure 'Selected Department' = SELECTEDVALUE(dim_department[Department], "Departments")
+		lineageTag: 6b37c4fa-058a-45a2-832f-cad39f3af1eb
+
+	measure 'Selected Employee' = SELECTEDVALUE(fact_emails[From Name], "Employees")
+		lineageTag: 2e51857c-53b8-4886-8369-2d4ffb400f9d
+
+	measure 'Chart 3' = "Drill Down: " & [Selected Department] & " > " & [Selected Seniority]
+		lineageTag: 4751227b-b594-4abc-aec3-da25e3b8398f
+
+	measure 'Chart 2' = "Drill Down: " & [Selected Topic] & " > " & [Selected Employee]
+		lineageTag: 5b8cc5e2-4db1-4666-882a-31ee3a5edd1b
+
+	measure 'Chart 1' = "Drill Down: " & [Selected Workday] & " > " & [Selected Workhours]
+		lineageTag: 3107ee68-205c-46ae-97cc-02b8e8b71b4f
+
+	measure 'Selected Workday' = SELECTEDVALUE(fact_emails[Workday?], "All Workdays")
+		lineageTag: eb1469ad-3e14-4325-bf0d-a09f78ceed66
+
+	measure 'Selected Workhours' = SELECTEDVALUE(fact_emails[WorkHours?], "All Workhours")
+		lineageTag: 0f2a07e7-da8b-4447-830d-65aab71f73b1
+
+	measure 'Selected Topic' = SELECTEDVALUE(fact_emails[Email topic], "Topics")
+		lineageTag: 5ac4f339-17e6-482e-8ed5-3c736b5673ea
+
+	measure 'Selected Seniority' = SELECTEDVALUE(dim_seniority[Seniority], "Seniority")
+		lineageTag: b7191771-0164-4fe1-86ac-33d009b1db59
+
+	measure 'Selected Device' = SELECTEDVALUE(fact_emails[Device], "Devices")
+		lineageTag: 7f276937-bce5-4871-a3ba-3216c0a21e3b
+
+	measure 'Chart 4' = "Drill Down: " & [Selected Device] & " > " & [Selected Workday] & " > " & [Selected Workhours]
+		lineageTag: 817f7eaf-959b-44e3-8401-2bf7b6eccd1b
+
+	measure 'Chart 5' = "Drill Down: " & [Selected Department] & " > " & [Selected Employee]
+		lineageTag: cbaf46ef-a970-4c91-85bf-b8aa3f4f3c32
+
+	measure 'Chart 6' = "Drill Down: " & [Selected Topic] & " > " & [Selected Seniority]
+		lineageTag: 7c6d809a-0c55-4b99-86df-98809173405c
+
+	partition 'Dynamic Titles' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

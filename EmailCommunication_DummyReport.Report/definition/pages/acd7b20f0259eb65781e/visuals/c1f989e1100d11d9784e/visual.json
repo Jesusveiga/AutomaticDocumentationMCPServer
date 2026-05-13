@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "c1f989e1100d11d9784e",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 29.741379310344829,
+    "width": 352.58620689655174,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Negative",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "10.5pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "\t\t\t\t\t"
+                  },
+                  {
+                    "value": "Neutral\t\t",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "\t"
+                  },
+                  {
+                    "value": "\t",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "\t\t\t\t"
+                  },
+                  {
+                    "value": "Positive",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "d387d7823052100edbc5"
+}

@@ -1,0 +1,69 @@
+table TopicGroup
+	lineageTag: 9624fdb7-a4e1-4ac7-8913-03fec1ad6b82
+
+	measure 'Emails by Topic Group' = ```
+			
+			VAR CurrentGroup = SELECTEDVALUE(TopicGroup[Group])
+			
+			// Tạo bảng topic + count trong context hiện tại (respect slicers)
+			VAR TopicCounts =
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            ALLSELECTED(fact_emails),
+			            fact_emails[Email topic - Short]
+			        ),
+			        "Cnt", CALCULATE(COUNTROWS(fact_emails))
+			    )
+			
+			// Thêm cột Rank (dense rank theo Cnt)
+			VAR TopicWithRank =
+			    ADDCOLUMNS(
+			        TopicCounts,
+			        "Rank", RANKX(TopicCounts, [Cnt], , DESC, DENSE)
+			    )
+			
+			VAR Top1 = SUMX( FILTER(TopicWithRank, [Rank] = 1), [Cnt] )
+			VAR Top2 = SUMX( FILTER(TopicWithRank, [Rank] = 2), [Cnt] )
+			VAR Top3 = SUMX( FILTER(TopicWithRank, [Rank] = 3), [Cnt] )
+			VAR Others = SUMX( FILTER(TopicWithRank, [Rank] > 3), [Cnt] )
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    CurrentGroup = "Top 1", Top1,
+			    CurrentGroup = "Top 2", Top2,
+			    CurrentGroup = "Top 3", Top3,
+			    CurrentGroup = "Others", Others,
+			    BLANK()
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 0a1c9ae4-99b5-4b38-9807-e020389f5164
+
+	column Group
+		lineageTag: c393b98d-70e2-4a05-9f4f-5cd36cfc0a4f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Group]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TopicGroup = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Group", STRING,
+				    {
+				        {"Top 1"},
+				        {"Top 2"},
+				        {"Top 3"},
+				        {"Others"}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 34ef44196e254926a0dd95a49f86a9dc
+

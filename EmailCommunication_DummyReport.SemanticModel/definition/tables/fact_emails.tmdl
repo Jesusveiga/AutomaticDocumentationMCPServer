@@ -1,0 +1,242 @@
+table fact_emails
+	lineageTag: 0a1172c0-3b4b-488e-9b23-10116110589d
+
+	column 'Email id'
+		dataType: int64
+		formatString: 0
+		lineageTag: 15bb9933-a293-49f4-a661-874bc6a686a1
+		summarizeBy: sum
+		sourceColumn: Email id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Name'
+		dataType: string
+		lineageTag: f0cdd742-7100-4e83-8d14-34c29db90b3d
+		summarizeBy: none
+		sourceColumn: From Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From seniority'
+		dataType: string
+		lineageTag: 0be2228c-9285-4bc7-b42d-578f40927a17
+		summarizeBy: none
+		sourceColumn: From seniority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Department'
+		dataType: string
+		lineageTag: 7c4c5974-1cb4-497f-8314-f327cb412926
+		summarizeBy: none
+		sourceColumn: From Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Name'
+		dataType: string
+		lineageTag: 78536741-f557-4f43-a708-0f9bae8670c3
+		summarizeBy: none
+		sourceColumn: To Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To seniority'
+		dataType: string
+		lineageTag: 46b7fe0d-e2c4-4ec6-8664-b14846f15c00
+		summarizeBy: none
+		sourceColumn: To seniority
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Department'
+		dataType: string
+		lineageTag: 6678bc68-0886-49be-a16e-1d3db5ad2677
+		summarizeBy: none
+		sourceColumn: To Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email topic'
+		dataType: string
+		lineageTag: 5c134537-e713-4bfd-87a4-83ac69e55235
+		summarizeBy: none
+		sourceColumn: Email topic
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bd81843d-bd65-4cea-8d50-3c3450a2c716
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 8e71d9e9-f99d-49ec-979c-f11ef352c276
+			defaultHierarchy: LocalDateTable_63513472-0511-4adb-a34c-08d15153ca5c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Sentiment
+		dataType: string
+		lineageTag: 0237cdb0-7ca2-4889-8e4a-975725c6e60a
+		summarizeBy: none
+		sourceColumn: Sentiment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is opened?'
+		dataType: string
+		lineageTag: ec8e6aab-b7b6-402d-a22a-86988238f3e5
+		summarizeBy: none
+		sourceColumn: Is opened?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Device
+		dataType: string
+		lineageTag: 531b4710-581f-4a2f-9362-f449f016b71c
+		summarizeBy: none
+		sourceColumn: Device
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Within work hours'
+		dataType: string
+		lineageTag: 579d5e82-3605-493c-896c-9819177eda39
+		summarizeBy: none
+		sourceColumn: Within work hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Within workdays'
+		dataType: string
+		lineageTag: 7f1535cf-1415-4846-9209-bd5e38a8e7ae
+		summarizeBy: none
+		sourceColumn: Within workdays
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: bcca3be4-2232-4eac-8090-efa26c80a1e8
+		summarizeBy: none
+		sourceColumn: Day Name
+		sortByColumn: 'Day of Week'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 01f8ee30-5e42-40fb-a917-e374ac1b0aee
+		summarizeBy: sum
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkHours?
+		dataType: string
+		lineageTag: a22d1e20-e6f1-46aa-b7ca-89554bdd3ee5
+		summarizeBy: none
+		sourceColumn: WorkHours?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workday?
+		dataType: string
+		lineageTag: f4baa6ff-033b-4cef-b9a4-969016508e5f
+		summarizeBy: none
+		sourceColumn: Workday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column RandomTime = ```
+			
+			    VAR Hour = 9 + INT(RAND() * 9)  // Generates a random hour between 9 and 17 (9 AM to 5 PM)
+			    VAR Minute = INT(RAND() * 60)  // Generates a random minute between 0 and 59
+			    VAR Second = INT(RAND() * 60)  // Generates a random second between 0 and 59
+			    RETURN TIME(Hour, Minute, Second)
+			
+			```
+		formatString: General Date
+		lineageTag: 236c8ede-74e0-4a5d-8161-bf9973c9f940
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 9c1fab23-8e53-4716-b1e8-73844220d941
+			defaultHierarchy: LocalDateTable_4cda58ae-cf2f-4637-b717-9f3cd6b206fa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateTime = ```
+			fact_emails[Date] + fact_emails[RandomTime]
+			
+			```
+		formatString: General Date
+		lineageTag: 2abb724f-e4c9-47a3-b53a-6f386ae393a8
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 446efc68-2503-4778-b7f2-50232e1fdaa9
+			defaultHierarchy: LocalDateTable_b24bdeaf-cb39-46e8-994c-b1a00e7fec3f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column HourOfDay = HOUR(fact_emails[DateTime])
+		formatString: 0
+		lineageTag: 9865ba0d-d9bb-43a1-830d-ed2eef6a507e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email topic - Short'
+		dataType: string
+		lineageTag: 1cdbf5ad-996d-43bf-afc9-0f3d14e59acf
+		summarizeBy: none
+		sourceColumn: Email topic - Short
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_emails = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\toyin\OneDrive\Documents\Data Analysis Projects\Onyx Data DNA Challenge\2024\July 2024\Onyx Data -DataDNA Dataset Challenge - Email Analysis Dataset - July 2024\Onyx Data - Email Analysis Dataset - July 2024.xlsx"), null, true),
+				    #"emails- fact table_Sheet" = Source{[Item="emails- fact table",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"emails- fact table_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Email id", Int64.Type}, {"From Name", type text}, {"From seniority", type text}, {"From Department", type text}, {"To Name", type text}, {"To seniority", type text}, {"To Department", type text}, {"Email topic", type text}, {"Date", type date}, {"Sentiment", type text}, {"Is opened?", type text}, {"Device", type text}, {"Within work hours", type text}, {"Within workdays", type text}}),
+				    #"Inserted Day Name" = Table.AddColumn(#"Changed Type", "Day Name", each Date.DayOfWeekName([Date]), type text),
+				    #"Extracted First Characters" = Table.TransformColumns(#"Inserted Day Name", {{"Day Name", each Text.Start(_, 3), type text}}),
+				    #"Inserted Day of Week" = Table.AddColumn(#"Extracted First Characters", "Day of Week", each Date.DayOfWeek([Date])+1, Int64.Type),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Inserted Day of Week",{{"Device", Text.Proper, type text}, {"Is opened?", Text.Proper, type text}, {"Sentiment", Text.Proper, type text}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Capitalized Each Word", "Custom", each if [Within work hours] = "yes" then "Work Hours" else if [Within work hours] = "no" then "Non-Work Hours" else null),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Conditional Column",{{"Custom", "WorkHours?"}}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Renamed Columns", "Workday?", each if [Within workdays] = "yes" then "Workday" else if [Within workdays] = "no" then "Weekend" else null),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"Workday?", type text}, {"WorkHours?", type text}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type1", "Email topic", "Email topic - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column",{{"Email topic - Copy", "Email topic - Short"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns1","Internal Policies and Procedures","Internal Policies & Procs.",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Finance and Accounting","Finance & Acct.",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Sales and Marketing","Sales & Mktg.",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Training and Development","Training & Dev.",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Client Related Communication","Client Related Comm",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","Meeting Scheduling","Meeting Schedule",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5","Operational Issues","Ops Issues",Replacer.ReplaceText,{"Email topic - Short"}),
+				    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","Product Development","Product Dev.",Replacer.ReplaceText,{"Email topic - Short"})
+				in
+				    #"Replaced Value7"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

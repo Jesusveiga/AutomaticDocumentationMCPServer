@@ -1,0 +1,163 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 570,
+        "y": 44
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 503,
+            "y": 271.2578125
+          },
+          "nodeIndex": "fact_emails",
+          "nodeLineageTag": "0a1172c0-3b4b-488e-9b23-10116110589d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 140,
+            "y": 70.2578125
+          },
+          "nodeIndex": "dim_contacts",
+          "nodeLineageTag": "6788749c-8a44-4f32-b28e-7f62f56bf7e2",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1062,
+            "y": 0
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "146f207e-398c-48d4-91f4-3c557fd07c32",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 953.80000305175781,
+            "y": 299.5078125
+          },
+          "nodeIndex": "Source Nodes",
+          "nodeLineageTag": "13bf3e1c-95cd-42f5-a93f-a3520e80fdb6",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1078,
+            "y": 124.1328125
+          },
+          "nodeIndex": "Target Nodes",
+          "nodeLineageTag": "16fc0bca-0194-4ed2-aef0-0608047ecd6a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 122,
+            "y": 661.07655715942383
+          },
+          "nodeIndex": "dim_seniority",
+          "nodeLineageTag": "dd62f2b6-b5ee-4a61-b8b2-592251709832",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 549.19998168945313,
+            "y": 0
+          },
+          "nodeIndex": "dim_department",
+          "nodeLineageTag": "1e1608c8-e19d-47e1-9d43-5d4e1b369632",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1257.8000030517578,
+            "y": 330.53827857971191
+          },
+          "nodeIndex": "Dynamic Titles",
+          "nodeLineageTag": "bbd2c83e-ada3-462c-8c95-a262091c3a3e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 809.80000305175781,
+            "y": 507.53827857971191
+          },
+          "nodeIndex": "Sentiment",
+          "nodeLineageTag": "bc685a49-faee-4481-a632-133704f13102",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1325.8000030517578,
+            "y": 78.538278579711914
+          },
+          "nodeIndex": "TopicGroup",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1487.8000030517578,
+            "y": 282.53827857971191
+          },
+          "nodeIndex": "FlexaDesign",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

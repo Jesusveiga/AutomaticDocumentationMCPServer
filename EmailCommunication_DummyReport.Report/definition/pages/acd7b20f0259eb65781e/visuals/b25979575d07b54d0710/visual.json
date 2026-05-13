@@ -1,0 +1,421 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "b25979575d07b54d0710",
+  "position": {
+    "x": 749.47368421052636,
+    "y": 193.68421052631581,
+    "z": 6000,
+    "height": 515.78947368421052,
+    "width": 502.10526315789474,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "flexatables_2_0_5_90",
+    "query": {
+      "queryState": {
+        "rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emails"
+                    }
+                  },
+                  "Property": "Day Name"
+                }
+              },
+              "queryRef": "fact_emails.Day Name",
+              "nativeQueryRef": "Day Name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emails"
+                    }
+                  },
+                  "Property": "Email topic"
+                }
+              },
+              "queryRef": "fact_emails.Email topic",
+              "nativeQueryRef": "Email topic",
+              "active": true
+            }
+          ]
+        },
+        "values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "TotalEmailsSent"
+                }
+              },
+              "queryRef": "_Measures.TotalEmailsSent",
+              "nativeQueryRef": "TotalEmailsSent"
+            }
+          ]
+        },
+        "collapsed_pivot_group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_department"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "dim_department.Department",
+              "nativeQueryRef": "Department"
+            }
+          ]
+        },
+        "columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_contacts"
+                    }
+                  },
+                  "Property": "Seniority"
+                }
+              },
+              "queryRef": "dim_contacts.Seniority",
+              "nativeQueryRef": "Seniority"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_emails"
+                        }
+                      },
+                      "Property": "HourOfDay"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_emails.HourOfDay)",
+              "nativeQueryRef": "Sum of HourOfDay"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "viewMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"viewMode\":\"all\"}'"
+                }
+              }
+            },
+            "pivotSetting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"valuesPivot\":[{\"id\":1,\"label\":\"XyZabc\",\"type\":{\"underlyingType\":260,\"category\":null,\"primitiveType\":4,\"extendedType\":260,\"categoryString\":null,\"text\":false,\"numeric\":true,\"integer\":true,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"TotalEmailsSent\"}],\"rows\":[{\"id\":2,\"label\":\"MnOpQr\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Department\"},{\"id\":5,\"label\":\"AbCdEf\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Seniority\"}],\"columns\":[{\"id\":0,\"label\":\"aBcDeF\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Day Name\"}],\"fieldList\":[{\"id\":0,\"label\":\"aBcDeF\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Day Name\"},{\"id\":1,\"label\":\"XyZabc\",\"type\":{\"underlyingType\":260,\"category\":null,\"primitiveType\":4,\"extendedType\":260,\"categoryString\":null,\"text\":false,\"numeric\":true,\"integer\":true,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"TotalEmailsSent\"},{\"id\":2,\"label\":\"MnOpQr\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Department\"},{\"id\":3,\"label\":\"TuVwXy\",\"type\":{\"underlyingType\":260,\"category\":null,\"primitiveType\":4,\"extendedType\":260,\"categoryString\":null,\"text\":false,\"numeric\":true,\"integer\":true,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Sum of HourOfDay\"},{\"id\":4,\"label\":\"GhIjKl\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Email topic\"},{\"id\":5,\"label\":\"AbCdEf\",\"type\":{\"underlyingType\":1,\"category\":null,\"primitiveType\":1,\"extendedType\":1,\"categoryString\":null,\"text\":true,\"numeric\":false,\"integer\":false,\"bool\":false,\"dateTime\":false,\"duration\":false,\"binary\":false,\"json\":false,\"none\":false},\"name\":\"Seniority\"}],\"filters\":[],\"dateComparison\":[]}'"
+                }
+              }
+            },
+            "dateTime": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "filterValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "tableColumnsPersist": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"Group\",\"header\":\"Group\",\"accessorKey\":\"Group\"},{\"id\":\"Sat\",\"header\":\"Sat\",\"columns\":[],\"accessorKey\":\"Sat\"},{\"id\":\"Sun\",\"header\":\"Sun\",\"columns\":[],\"accessorKey\":\"Sun\"}]'"
+                }
+              }
+            },
+            "conditional": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"id\":\"RgarNC\",\"type\":\"gradient\",\"key\":\"XyZabc\",\"gradient\":{\"color\":\"linear-gradient(to right, #dbebfb, #9ecf0d)\",\"minValue\":0,\"maxValue\":80,\"state\":{\"maximum\":{\"type\":\"highest\",\"color\":\"#9ecf0d\",\"value\":80},\"minimum\":{\"type\":\"lowest\",\"color\":\"#dbebfb\",\"value\":0}}},\"rules\":null}]'"
+                }
+              }
+            },
+            "manageTotalPersist": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "category": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "hiddenValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"dataColumns\":{\"Sales\":true,\"Product development\":true,\"Marketing\":true,\"Legal\":true,\"Information Technology (IT)\":true,\"Human Resources\":true,\"Finance and Accounting\":true,\"Executive Management\":true,\"Customer Service\":true,\"(blank)\":false,\"Group\":true},\"fixedColumns\":[],\"categoryColumns\":null}'"
+                }
+              }
+            },
+            "showChartValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "expandedPersist": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"0\":true,\"1\":true,\"2\":true,\"3\":true,\"4\":true,\"5\":true,\"6\":true,\"7\":true,\"8\":true}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "lineAlignmentValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontValueBold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "totalShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "subTotalShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontHeaderItalic": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "lineAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "customValue": [
+        {
+          "properties": {
+            "customValueToggle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "decimal": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "thousandsSeparator": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "customColor": [
+        {
+          "properties": {
+            "showAlternating": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showGridLineVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showGridLineHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "operationsBackground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F5FAFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "buttonColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#190f6e'"
+                    }
+                  }
+                }
+              }
+            },
+            "backgroundColorHeader": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            },
+            "textColorHeader": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#190f6e'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

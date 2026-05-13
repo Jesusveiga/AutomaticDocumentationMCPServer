@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "886378ef91b2d33d790d",
+  "position": {
+    "x": 34.883720930232556,
+    "y": 140.93023255813952,
+    "z": 9000,
+    "height": 61.395348837209305,
+    "width": 323.72093023255815,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "flexadesign",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emails"
+                    }
+                  },
+                  "Property": "Workday?"
+                }
+              },
+              "queryRef": "fact_emails.Workday?",
+              "nativeQueryRef": "Workday?"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "nodeComplexSettings": [
+        {
+          "properties": {
+            "settingMenu": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"styleMenu\":0,\"selectType\":\"single\",\"menuActive\":\"fill\",\"menuType\":\"horizontal\",\"gapContainer\":12,\"gapItem\":10,\"activeColor\":\"#067ff8cc\",\"backgroundContainer\":\"transparent\",\"textColor\":\"#151438\",\"backgroundDefault\":\"#ffffff\",\"containerPosition\":\"top-left\",\"textActive\":\"#f0f0fa\",\"backgroundActive\":\"#312e81\",\"containerBorderRadius\":8,\"itemBorderRadius\":29,\"isShowIcon\":true,\"itemPadding\":{\"top\":8,\"right\":15,\"bottom\":8,\"left\":15},\"containerPadding\":{\"top\":10,\"right\":10,\"bottom\":10,\"left\":10},\"hoverColor\":\"transparent\",\"shadowContainer\":{\"name\":\"#none\",\"value\":\"none\"},\"shadowItem\":{\"name\":\"#none\",\"value\":\"none\"},\"iconPosition\":\"left\",\"isBackgroundWave\":false,\"backgroundWaveGenerator\":{\"style\":\"none\",\"color\":\"#aeace2\",\"minY\":0,\"position\":\"top\",\"zoom\":1,\"translateX\":0,\"height\":1,\"isCustomLayout\":false},\"positionLeft\":0,\"positionTop\":0,\"menuItems\":[{\"id\":\"Weekend\",\"name\":\"Weekend\",\"icon\":\"House\"},{\"id\":\"Workday\",\"name\":\"Workday\",\"icon\":\"House\"}],\"buttonStyle\":\"iconButtonFive\",\"size\":33,\"widthItem\":\"100%\",\"fontFamily\":\"Arial, sans-serif\",\"fontWeight\":\"100\",\"borderActive\":\"#312e81\",\"borderDefault\":\"#312e81\",\"iconColorDefault\":\"#ffffff\",\"iconColorActive\":\"#f0f0fa\",\"colorGenerator\":\"#312e81\"}'"
+                }
+              }
+            },
+            "optionType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'MENU'"
+                }
+              }
+            },
+            "settingToggle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"type\":\"toggleTwo\",\"size\":28,\"isShowText\":true,\"isShowTextOnOff\":false,\"boxShadow\":{\"name\":\"#15\",\"value\":\"rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px\"},\"textEnd\":\"Off\",\"textStart\":\"On\",\"endIcon\":\"Sun\",\"color\":\"#3b82f6\",\"startIcon\":\"Moon\",\"isBorderRadius\":true,\"borderRadius\":20,\"isBorder\":false,\"borderWidth\":1,\"borderStyle\":\"solid\",\"borderColor\":\"#ccc\",\"fontFamily\":\"Arial, sans-serif\",\"fontWeight\":\"Regular\",\"textColor\":\"#000000\"}'"
+                }
+              }
+            },
+            "licenseValue": {
+              "expr": {
+                "Literal": {
+                  "Value": "'all'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "f",
+                    "Entity": "fact_emails",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "f"
+                                }
+                              },
+                              "Property": "Workday?"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Weekend'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

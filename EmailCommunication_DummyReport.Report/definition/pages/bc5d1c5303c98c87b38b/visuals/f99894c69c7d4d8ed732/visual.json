@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "f99894c69c7d4d8ed732",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 38.18181818181818,
+    "width": 322.72727272727269,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "        Negative                   ",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "10.5pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "\t"
+                  },
+                  {
+                    "value": "Neutral ",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "10.5pt",
+                      "color": "#666666"
+                    }
+                  },
+                  {
+                    "value": "\t\t\t\t"
+                  },
+                  {
+                    "value": "Positive",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "10.5pt",
+                      "color": "#666666"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "1258a246e0a180c2b1ee"
+}

@@ -1,0 +1,27 @@
+table dim_department
+	lineageTag: 1e1608c8-e19d-47e1-9d43-5d4e1b369632
+
+	column Department
+		dataType: string
+		lineageTag: 031a844a-5bae-4454-9ee6-edc49d6c03dc
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_department = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\toyin\OneDrive\Documents\Data Analysis Projects\Onyx Data DNA Challenge\2024\July 2024\Onyx Data -DataDNA Dataset Challenge - Email Analysis Dataset - July 2024\Onyx Data - Email Analysis Dataset - July 2024.xlsx"), null, true),
+				    #"contacts - dimension table_Sheet" = Source{[Item="contacts - dimension table",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"contacts - dimension table_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Name", type text}, {"Department", type text}, {"email", type text}, {"Base 64 Image", type text}, {"Seniority", type text}, {"Department color", type text}, {"Department aura", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type1",{"Department"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Table
+

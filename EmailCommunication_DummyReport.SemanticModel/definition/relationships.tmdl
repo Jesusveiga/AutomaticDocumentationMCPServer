@@ -1,0 +1,46 @@
+relationship 8e71d9e9-f99d-49ec-979c-f11ef352c276
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_emails.Date
+	toColumn: LocalDateTable_63513472-0511-4adb-a34c-08d15153ca5c.Date
+
+relationship 6beab0f8-811b-d027-7f6e-86a60506f516
+	fromColumn: fact_emails.'From Name'
+	toColumn: dim_contacts.Name
+
+relationship af71ecd3-5890-b3c2-b602-a341ba0429e5
+	isActive: false
+	fromColumn: fact_emails.'To Name'
+	toColumn: dim_contacts.Name
+
+relationship 86a79e6b-ad97-6525-3af3-ba3ef5bfec17
+	fromColumn: fact_emails.'From seniority'
+	toColumn: dim_seniority.Seniority
+
+relationship 58ac4bc4-086d-45c6-3bb8-db4319d0c3b6
+	isActive: false
+	fromColumn: fact_emails.'To seniority'
+	toColumn: dim_seniority.Seniority
+
+relationship bf9bec98-7df1-a8ad-7aef-b1eb4e17949c
+	fromColumn: fact_emails.'From Department'
+	toColumn: dim_department.Department
+
+relationship 9d63c1ef-2d50-1818-0df9-3b48ef4c1af9
+	isActive: false
+	fromColumn: fact_emails.'To Department'
+	toColumn: dim_department.Department
+
+relationship AutoDetected_b73ddeea-46e8-484d-bcd2-e2dee45a595b
+	fromColumn: fact_emails.Sentiment
+	toColumn: Sentiment.Sentiment
+
+relationship 9c1fab23-8e53-4716-b1e8-73844220d941
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_emails.RandomTime
+	toColumn: LocalDateTable_4cda58ae-cf2f-4637-b717-9f3cd6b206fa.Date
+
+relationship 446efc68-2503-4778-b7f2-50232e1fdaa9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_emails.DateTime
+	toColumn: LocalDateTable_b24bdeaf-cb39-46e8-994c-b1a00e7fec3f.Date
+

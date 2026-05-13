@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Generated files in ROOT (but keep /examples and /templates)
+/TechnicalDesign_*.docx
+/TechnicalDesign_*.pdf
+output/
+temp/
+
+# Word Temporary Files
+~$*.docx
+~$*.doc
+
+# Sensitive Data
+*.key
+*.pem
+credentials.json
+config.local.py
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Cloud Sync Tools
+.cloud-sync/
+*.cloud-sync
+
+# Installers (not needed in repo)
+*.msi
+*.exe
+*.iso
+
+# Power BI Specific
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
